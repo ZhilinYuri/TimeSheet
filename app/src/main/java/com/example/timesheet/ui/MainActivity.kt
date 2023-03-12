@@ -1,7 +1,8 @@
-package com.example.timesheet
+package com.example.timesheet.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.timesheet.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
