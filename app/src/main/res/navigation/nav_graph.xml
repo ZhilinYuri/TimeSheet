@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.timesheet.ui.fragment.StartFragment"
-        android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
+        android:label="@string/menu"
+        tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_startFragment_to_employeeListFragment"
             app:destination="@id/employeeListFragment" />
@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/employeeListFragment"
         android:name="com.example.timesheet.ui.fragment.EmployeeListFragment"
-        android:label="fragment_employee_list"
-        tools:layout="@layout/fragment_employee_list" >
+        android:label="@string/list_employees"
+        tools:layout="@layout/fragment_employee_list">
         <action
             android:id="@+id/action_employeeListFragment_to_employeeDetailFragment"
             app:destination="@id/employeeDetailFragment" />
@@ -29,8 +29,8 @@
     <fragment
         android:id="@+id/employeeDetailFragment"
         android:name="com.example.timesheet.ui.fragment.EmployeeDetailFragment"
-        android:label="fragment_employee_detail"
-        tools:layout="@layout/fragment_employee_detail" >
+        android:label="@string/employee_profile"
+        tools:layout="@layout/fragment_employee_detail">
         <argument
             android:name="employee_id"
             app:argType="integer" />
@@ -41,8 +41,8 @@
     <fragment
         android:id="@+id/addEmployeeFragment"
         android:name="com.example.timesheet.ui.fragment.AddEmployeeFragment"
-        android:label="fragment_add_employee"
-        tools:layout="@layout/fragment_add_employee" >
+        android:label="@string/add_employee"
+        tools:layout="@layout/fragment_add_employee">
         <argument
             android:name="title"
             app:argType="string" />
