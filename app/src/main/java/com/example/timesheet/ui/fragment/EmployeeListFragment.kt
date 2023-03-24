@@ -15,9 +15,9 @@ import com.example.timesheet.viewModel.TimeSheetViewModel
 
 class EmployeeListFragment : Fragment() {
 
-    private val viewModel: TimeSheetViewModel by viewModels { TimeSheetViewModel.Factory }
     private var _binding: FragmentEmployeeListBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: TimeSheetViewModel by viewModels { TimeSheetViewModel.Factory }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

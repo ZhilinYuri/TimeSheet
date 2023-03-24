@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/employeeName"
+        android:id="@+id/lastName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -18,14 +18,36 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="John Smith" />
+        tools:text="Smith" />
+
+    <TextView
+        android:id="@+id/firstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="John"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/lastName"
+        app:layout_constraintStart_toEndOf="@+id/lastName"
+        app:layout_constraintTop_toTopOf="@+id/lastName" />
+
+    <TextView
+        android:id="@+id/patronymic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patronymic"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/firstName"
+        app:layout_constraintStart_toEndOf="@+id/firstName"
+        app:layout_constraintTop_toTopOf="@+id/firstName" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="employeeName" />
+        app:constraint_referenced_ids="lastName" />
+
 
 
 

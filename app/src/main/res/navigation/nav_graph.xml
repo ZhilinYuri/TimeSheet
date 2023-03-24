@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/addEmployeeFragment"
         android:name="com.example.timesheet.ui.fragment.AddEmployeeFragment"
-        android:label="@string/add_employee"
+        android:label="{title}"
         tools:layout="@layout/fragment_add_employee">
         <argument
             android:name="title"
@@ -51,7 +51,9 @@
             android:defaultValue="-1"
             app:argType="integer" />
         <action
-            android:id="@+id/action_addEmployeeFragment_to_employeeListFragment4"
-            app:destination="@id/employeeListFragment" />
+            android:id="@+id/action_addEmployeeFragment_to_employeeListFragment"
+            app:destination="@id/employeeListFragment"
+            app:popUpTo="@id/employeeListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

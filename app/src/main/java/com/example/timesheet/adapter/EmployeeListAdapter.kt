@@ -2,6 +2,7 @@ package com.example.timesheet.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.leanback.widget.DiffCallback
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -33,14 +34,18 @@ class EmployeeListAdapter(private val onItemEmployeeClicked: (Employee) -> Unit)
 
         fun bind(employee: Employee) {
             binding.apply {
-                employeeName.text = employee.lastName
+                lastName.text = employee.lastName
+                firstName.text = formatName(employee.firstName)
+                patronymic.text = formatName(employee.patronymic)
             }
+        }
+
+        fun formatName(name: String): String {
+            return name.first() + "."
         }
     }
 
-    fun formatName(lastName: String, firstName: String, patronymic: String): String {
-        return ""
-    }
+
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Employee>() {

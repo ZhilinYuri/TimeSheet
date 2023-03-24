@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lastName_et"
+            android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName" />
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lastName_Et">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/firstName_et"
+            android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName" />
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/firstName_Et">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/patronymic_et"
+            android:id="@+id/patronymic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName" />
@@ -92,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/patronymic_Et">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/position_et"
+            android:id="@+id/position"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName" />
@@ -108,6 +108,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/button_save"
         app:cornerRadius="14dp"
+        android:drawableLeft="@drawable/ic_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

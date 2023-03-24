@@ -9,16 +9,16 @@
     tools:context="ui.fragment.StartFragment">
 
     <Button
-            android:id="@+id/buttonEmployees"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:drawableLeft="@drawable/ic_show_employee_list"
-            android:text="@string/button_employees"
-            app:cornerRadius="14dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_timeSheet"
-            app:layout_constraintEnd_toEndOf="@+id/button_timeSheet"
-            app:layout_constraintStart_toStartOf="@+id/button_timeSheet" />
+        android:id="@+id/buttonEmployees"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:drawableLeft="@drawable/ic_show_employee_list"
+        android:text="@string/button_employees"
+        app:cornerRadius="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_timeSheet"
+        app:layout_constraintEnd_toEndOf="@+id/button_timeSheet"
+        app:layout_constraintStart_toStartOf="@+id/button_timeSheet" />
 
         <Button
             android:id="@+id/button_timeSheet"

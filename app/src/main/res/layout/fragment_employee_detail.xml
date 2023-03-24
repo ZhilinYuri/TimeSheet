@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/last_name"
+        android:id="@+id/last_name_tx"
         android:layout_width="86dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -16,11 +16,12 @@
         android:lines="1"
         android:text="@string/add_last_name"
         android:textSize="18sp"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/first_name"
+        android:id="@+id/first_name_tx"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -28,28 +29,72 @@
         android:lines="1"
         android:text="@string/add_first_name"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/last_name"
-        app:layout_constraintTop_toBottomOf="@+id/last_name" />
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/last_name_tx"
+        app:layout_constraintTop_toBottomOf="@+id/last_name_tx" />
+
+    <TextView
+        android:id="@+id/patronymic_tx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/add_patronymic"
+        android:textSize="18sp"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/first_name_tx"
+        app:layout_constraintTop_toBottomOf="@+id/first_name_tx" />
+
+    <TextView
+        android:id="@+id/position_tx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/add_position"
+        android:textSize="18sp"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/patronymic_tx"
+        app:layout_constraintTop_toBottomOf="@+id/patronymic_tx" />
+
+
+    <TextView
+        android:id="@+id/last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/last_name_tx"
+        app:layout_constraintStart_toEndOf="@+id/last_name_tx"
+        app:layout_constraintTop_toTopOf="@+id/last_name_tx" />
+
+    <TextView
+        android:id="@+id/first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/first_name_tx"
+        app:layout_constraintStart_toEndOf="@+id/first_name_tx"
+        app:layout_constraintTop_toTopOf="@+id/first_name_tx" />
 
     <TextView
         android:id="@+id/patronymic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/add_patronymic"
+        android:layout_marginStart="8dp"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/first_name"
-        app:layout_constraintTop_toBottomOf="@+id/first_name" />
+        app:layout_constraintBottom_toBottomOf="@+id/patronymic_tx"
+        app:layout_constraintStart_toEndOf="@+id/patronymic_tx"
+        app:layout_constraintTop_toTopOf="@+id/patronymic_tx" />
 
     <TextView
         android:id="@+id/position"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/add_position"
+        android:layout_marginStart="8dp"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/patronymic"
-        app:layout_constraintTop_toBottomOf="@+id/patronymic" />
+        app:layout_constraintBottom_toBottomOf="@+id/position_tx"
+        app:layout_constraintStart_toEndOf="@+id/position_tx"
+        app:layout_constraintTop_toTopOf="@+id/position_tx" />
 
     <Button
         android:id="@+id/button_change"
