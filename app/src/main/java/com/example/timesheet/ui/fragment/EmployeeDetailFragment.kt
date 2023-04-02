@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -45,7 +46,24 @@ class EmployeeDetailFragment : Fragment() {
             firstName.text = employee.firstName
             patronymic.text = employee.patronymic
             position.text = employee.position
+            buttonDelete.animate().apply {
+                translationX(-500f)
+                scaleX(1.1f)
+                scaleY(1.1f)
+                alpha(1f)
+                duration=600
+                interpolator= AccelerateDecelerateInterpolator()
+            }.start()
             buttonDelete.setOnClickListener { showConfirmationDialog() }
+
+            buttonChange.animate().apply {
+                translationX(-500f)
+                scaleX(1.1f)
+                scaleY(1.1f)
+                alpha(1f)
+                duration=1000
+                interpolator= AccelerateDecelerateInterpolator()
+            }.start()
             buttonChange.setOnClickListener { editEmployee() }
         }
     }

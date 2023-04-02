@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.fragment.app.viewModels
@@ -44,12 +45,20 @@ class AddEmployeeFragment : Fragment() {
                 bind(employee)
             }
         } else {
-            binding.buttonSave.setOnClickListener {
-                addNewEmployee()
+            binding.apply {
+                buttonSave.animate().apply {
+                    scaleX(1.1f)
+                    scaleY(1.1f)
+                    alpha(1f)
+                    duration = 1000
+                    interpolator= AccelerateDecelerateInterpolator()
+                }.start()
+                buttonSave.setOnClickListener {
+                    addNewEmployee()
+                }
             }
         }
     }
-
     private fun isEntryValid(): Boolean {
         return viewModel.isEntryValid(
            binding.lastName.text.toString(),
@@ -76,6 +85,13 @@ class AddEmployeeFragment : Fragment() {
             firstName.setText(employee.firstName, TextView.BufferType.SPANNABLE)
             patronymic.setText(employee.patronymic, TextView.BufferType.SPANNABLE)
             position.setText(employee.position, TextView.BufferType.SPANNABLE)
+            buttonSave.animate().apply {
+                scaleX(1.1f)
+                scaleY(1.1f)
+                alpha(1f)
+                duration = 1000
+                interpolator= AccelerateDecelerateInterpolator()
+            }.start()
             buttonSave.setOnClickListener { updateEmployee() }
         }
     }

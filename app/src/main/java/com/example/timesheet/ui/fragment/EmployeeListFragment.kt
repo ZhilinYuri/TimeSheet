@@ -1,10 +1,12 @@
 package com.example.timesheet.ui.fragment
 
+import android.graphics.Color.alpha
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,14 +31,11 @@ class EmployeeListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         val adapter = EmployeeListAdapter {
-
             val action = EmployeeListFragmentDirections.actionEmployeeListFragmentToEmployeeDetailFragment(it.id)
             this.findNavController().navigate(action)
-
         }
+
         binding.recyclerView.adapter = adapter
         viewModel.allEmployees.observe(this.viewLifecycleOwner) { books ->
             books.let {
@@ -44,11 +43,21 @@ class EmployeeListFragment : Fragment() {
             }
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
-        binding.floatingActionButton.setOnClickListener {
-            val action = EmployeeListFragmentDirections.actionEmployeeListFragmentToAddEmployeeFragment(
-                getString(R.string.add_employee)
-            )
-            this.findNavController().navigate(action)
+        binding.apply {
+            floatingActionButton.animate().apply{
+                scaleX(1.1f)
+                scaleY(1.1f)
+                alpha(1f)
+                duration = 1000
+                interpolator= AccelerateDecelerateInterpolator()
+            }.start()
+            floatingActionButton.setOnClickListener {
+                val action = EmployeeListFragmentDirections.actionEmployeeListFragmentToAddEmployeeFragment(
+                    getString(R.string.add_employee)
+                )
+                findNavController().navigate(action)
+            }
         }
+
     }
 }
